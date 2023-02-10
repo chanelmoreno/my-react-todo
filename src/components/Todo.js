@@ -27,6 +27,11 @@ const Todo = () => {
     setItems(newArray);
   }
 
+  const completeItem = (id) => {
+    const newArray = items.filter(item => item.id !== id)
+    setItems(newArray);
+  }
+
   return (
     <div >
       <div class="todo-title">
@@ -45,6 +50,7 @@ const Todo = () => {
         </div>
         <div>
           <button class='add-button' onClick={() => addItem()}>+ Add Task</button>
+
         </div>
 
       </div>
@@ -54,13 +60,16 @@ const Todo = () => {
         <ul class='todoList'>
           {items.map(item => {
             return (
-              <li class='listItem' key={item.id}>
-                {item.value}
-                <div>
-                  <button onClick={() => deleteItem(item.id)}>x</button>
+              <div class='list'>
+                <li class='listItem' key={item.id}>
+                  {item.value}
+                </li>
+                <div class='listItemButton'>
+                  <button onClick={() => completeItem(item.id)}>✅ Complete</button>
+                  <button onClick={() => deleteItem(item.id)}>❌ Delete</button>
                 </div>
+              </div>
 
-              </li>
             )
           })}
         </ul>

@@ -5,11 +5,6 @@
   height: 100vh;
 }
 
-.app-area {
-  width: 90%;
-  align-items: center;
-
-}
 
 .nav {
   width: 100%;
@@ -29,15 +24,15 @@
 }
 
 .todo {
-  width: 90%;
+  width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   padding: 1rem 2rem;
-  margin-left: 60px;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 6px;
   flex-direction: column;
+  /* background-color: rgba(255, 255, 255, 0.2); */
+  border-radius: 6px;
+
 }
 
 .todo-title {
@@ -46,6 +41,7 @@
   justify-content: space-evenly;
   align-items: center;
   padding: 1rem 2rem;
+
 }
 
 .todo-input-div {
@@ -77,9 +73,17 @@
   padding: 1rem 2rem;
 }
 
+.listItemButton {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
 .add-button {
   padding: 10px 20px 10px 20px;
-  width: 415px;
+  width: 400px;
   height: 45px;
   border: medium dashed rgba(255, 255, 255, 0.654);
   border-radius: 6px;
@@ -87,4 +91,15 @@
   font-size: medium;
   font-weight: 900;
   background-color: rgb(186, 73, 73);
+}
+
+.add-button:hover {
+  background-color: rgb(169, 63, 63);
+}
+
+.list {
+  width: 40%;
+  background-color: rgba(255, 255, 255, 0.196);
+  margin-left: 300px;
+  border-radius: 6px;
 }
