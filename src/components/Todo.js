@@ -63,8 +63,8 @@ const Todo = () => {
               <div class='list'>
                 <li class='listItem' key={item.id}>
                   <h3>{item.value}</h3>
+                  <button class='listItemButton' onClick={() => deleteItem(item.id)}>❌ Delete</button>
                 </li>
-                <button class='listItemButton' onClick={() => deleteItem(item.id)}>❌ Delete</button>
               </div>
             )
           })}

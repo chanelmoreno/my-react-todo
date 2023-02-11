@@ -1,12 +1,13 @@
 import React from 'react';
-import { Header, NavBar, Todo } from './components';
+import { NavBar, Todo, Timer } from './components';
 import './index.css';
 
 const App = () => {
   return (
-    <div class='app'>
-      <div class='app-area'>
+    <div className='app'>
+      <div className='app-area'>
         <NavBar />
+        <Timer />
         <Todo />
 
       </div>
