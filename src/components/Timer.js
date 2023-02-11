@@ -7,16 +7,27 @@ const Timer = () => {
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
 
-  const deadline = Date.now() + 1500000
+  const milliseconds = 1500000 //25 minutes
+  let deadline = Date.now() + milliseconds
 
   const getTime = () => {
+
     const time = (deadline) - Date.now();
     setMinutes(Math.floor((time / 1000 / 60) % 60));
     setSeconds(Math.floor((time / 1000) % 60));
   };
 
+  const pauseTimer = () => {
+    console.log(minutes)
+    console.log(seconds)
+  }
+
+  const startTimer = () => {
+    setisTimerStarted(true);
+  }
+
   useEffect(() => {
-    const interval = setInterval(() => getTime(deadline), 1000);
+    const interval = setInterval(() => getTime(), 1000);
 
     return () => clearInterval(interval);
   }, []);
@@ -36,7 +47,7 @@ const Timer = () => {
             </div>
           </div>
           <div className="timer" >
-            <button className='start-button'>Pause</button>
+            <button onClick={() => pauseTimer(minutes, seconds)} className='start-button'>🚫 Stop</button>
           </div>
         </div>
 
@@ -53,7 +64,7 @@ const Timer = () => {
             </div>
           </div>
           <div className="timer" >
-            <button onClick={() => setisTimerStarted(true)} className='start-button'>Start</button>
+            <button onClick={() => startTimer()} className='start-button'>Start</button>
           </div>
         </div>
       )}

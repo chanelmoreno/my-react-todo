@@ -34,41 +34,43 @@ const Todo = () => {
 
   return (
     <div >
-      <div class="todo-title">
-        <h1 class="task-title">Tasks</h1>
-      </div>
+      <div className="todo-title">
+        <h1 className="task-title">Tasks</h1>
+      </div >
 
-      <div class='todo'>
-        <div class='todo-input-div'>
+      <div className='todo' >
+        <div className='todo-input-div' >
           <input
-            class='todo-input'
+            className='todo-input'
             type="text"
             placeholder='What do you want to focus on?'
             value={newItem}
             onChange={e => setNewItem(e.target.value)}
           />
-        </div>
+        </div >
         <div>
-          <button class='add-button' onClick={() => addItem()}>+ Add Task</button>
-        </div>
-      </div>
+          <button className='add-button' onClick={() => addItem()}>+ Add Task</button>
+        </div >
+      </div >
 
 
-      <div class='todoList-div'>
-        <ul class='todoList'>
-          {items.map(item => {
-            return (
-              <div class='list'>
-                <li class='listItem' key={item.id}>
-                  <h3>{item.value}</h3>
-                  <button class='listItemButton' onClick={() => deleteItem(item.id)}>❌ Delete</button>
-                </li>
-              </div>
-            )
-          })}
-        </ul>
-      </div>
-    </div>
+      <div className='todoList-div' >
+        <ul className='todoList' >
+          {
+            items.map(item => {
+              return (
+                <div className='list' >
+                  <li className='listItem' key={item.id} >
+                    <h3>{item.value}</h3>
+                    <button className='listItemButton' onClick={() => deleteItem(item.id)
+                    }>❌ Delete</button >
+                  </li >
+                </div >
+              )
+            })}
+        </ul >
+      </div >
+    </div >
 
   )
 }

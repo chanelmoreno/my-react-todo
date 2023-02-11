@@ -8,6 +8,7 @@ const App = () => {
       <div className='app-area'>
         <NavBar />
         <Timer />
+
         <Todo />
 
       </div>
