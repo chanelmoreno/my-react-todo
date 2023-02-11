@@ -62,14 +62,10 @@ const Todo = () => {
             return (
               <div class='list'>
                 <li class='listItem' key={item.id}>
-                  {item.value}
+                  <h3>{item.value}</h3>
                 </li>
-                <div class='listItemButton'>
-                  <button onClick={() => completeItem(item.id)}>✅ Complete</button>
-                  <button onClick={() => deleteItem(item.id)}>❌ Delete</button>
-                </div>
+                <button class='listItemButton' onClick={() => deleteItem(item.id)}>❌ Delete</button>
               </div>
-
             )
           })}
         </ul>

@@ -70,15 +70,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem 2rem;
-}
-
-.listItemButton {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem 2rem;
 }
 
 .add-button {
@@ -98,8 +89,22 @@
 }
 
 .list {
-  width: 40%;
-  background-color: rgba(255, 255, 255, 0.196);
-  margin-left: 300px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1rem 2rem;
+  flex-direction: column;
   border-radius: 6px;
+
+}
+
+.listItemButton {
+  padding: 10px 20px;
+  margin-left: 10px;
+  border-radius: 6px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  flex-direction: column;
 }
