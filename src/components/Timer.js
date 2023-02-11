@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import '../App.css';
 
 const Timer = () => {
 
@@ -21,16 +22,22 @@ const Timer = () => {
   }, []);
 
   return (
-    <div className="timer">
-      <div className='timer-box'>
-        <p >{minutes}</p>
-        <p className='little-text'> minutes</p>
+    <div>
+      <div className="timer">
+        <div className='timer-box'>
+          <p >{minutes}</p>
+          <p className='little-text'> minutes</p>
+        </div>
+        <div className='timer-box'>
+          <p >{seconds} </p>
+          <p className='little-text'> seconds</p>
+        </div>
       </div>
-      <div className='timer-box'>
-        <p >{seconds} </p>
-        <p className='little-text'> seconds</p>
+      <div className="timer" >
+        <button className='start-button'>Start</button>
       </div>
     </div>
+
   );
 };
 export default Timer;

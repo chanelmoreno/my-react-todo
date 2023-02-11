@@ -50,9 +50,7 @@ const Todo = () => {
         </div>
         <div>
           <button class='add-button' onClick={() => addItem()}>+ Add Task</button>
-
         </div>
-
       </div>
 
 

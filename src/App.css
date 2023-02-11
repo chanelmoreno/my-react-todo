@@ -131,3 +131,22 @@
   font-size: 40px;
   font-weight: 200;
 }
+
+.start-button {
+  display: flex;
+  padding: 10px 20px 10px 20px;
+  width: 400px;
+  height: 45px;
+  border: medium dashed rgba(255, 255, 255, 0.654);
+  border-radius: 6px;
+  color: rgba(255, 255, 255, 0.654);
+  font-size: medium;
+  font-weight: 900;
+  background-color: rgb(186, 73, 73);
+  justify-content: center;
+  align-items: center;
+}
+
+.start-button:hover {
+  background-color: rgb(169, 63, 63);
+}
