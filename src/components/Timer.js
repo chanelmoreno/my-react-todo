@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import '../App.css';
 
 const Timer = () => {
-
+  const [isTimerStarted, setisTimerStarted] = useState(false)
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
 
@@ -22,22 +22,43 @@ const Timer = () => {
   }, []);
 
   return (
-    <div>
-      <div className="timer">
-        <div className='timer-box'>
-          <p >{minutes}</p>
-          <p className='little-text'> minutes</p>
+    <div >
+      {isTimerStarted ? (
+        <div>
+          <div className="timer">
+            <div className='timer-box'>
+              <p >{minutes}</p>
+              <p className='little-text'> minutes</p>
+            </div>
+            <div className='timer-box'>
+              <p >{seconds} </p>
+              <p className='little-text'> seconds</p>
+            </div>
+          </div>
+          <div className="timer" >
+            <button className='start-button'>Pause</button>
+          </div>
         </div>
-        <div className='timer-box'>
-          <p >{seconds} </p>
-          <p className='little-text'> seconds</p>
-        </div>
-      </div>
-      <div className="timer" >
-        <button className='start-button'>Start</button>
-      </div>
-    </div>
 
-  );
+      ) : (
+        <div>
+          <div className="timer">
+            <div className='timer-box'>
+              <p >25</p>
+              <p className='little-text'> minutes</p>
+            </div>
+            <div className='timer-box'>
+              <p >00 </p>
+              <p className='little-text'> seconds</p>
+            </div>
+          </div>
+          <div className="timer" >
+            <button onClick={() => setisTimerStarted(true)} className='start-button'>Start</button>
+          </div>
+        </div>
+      )}
+    </div>
+  )
 };
+
 export default Timer;
