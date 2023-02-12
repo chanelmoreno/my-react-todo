@@ -4,8 +4,6 @@ import { Countdown } from '../components';
 import '../App.css';
 
 const Timer = () => {
-  const [minutes, setMinutes] = useState(0);
-  const [seconds, setSeconds] = useState(0);
   const [isTimerStarted, setisTimerStarted] = useState(false)
 
   const startTimer = () => {
@@ -18,6 +16,7 @@ const Timer = () => {
 
   return (
     <div >
+      <h1 className="title">Countdown</h1>
       {isTimerStarted ? (
         <div>
           <Countdown />
@@ -49,8 +48,3 @@ const Timer = () => {
 
 export default Timer;
 
- // const pauseTimer = () => {
-  //   console.log(minutes)
-  //   console.log(seconds)
-  //   deadline = Date.now() + milliseconds;
-  // }

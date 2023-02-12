@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { TodoItem } from '../components'
 import '../App.css';
 
 
@@ -27,21 +28,15 @@ const Todo = () => {
     setItems(newArray);
   }
 
-  const completeItem = (id) => {
-    const newArray = items.filter(item => item.id !== id)
-    setItems(newArray);
-  }
 
   return (
     <div >
-      <div className="todo-title">
-        <h1 className="task-title">Tasks</h1>
-      </div >
-
+      <h1 className="title">Tasks</h1>
       <div className='todo' >
         <div className='todo-input-div' >
           <input
             className='todo-input'
+            maxlength="30"
             type="text"
             placeholder='What do you want to focus on?'
             value={newItem}
@@ -51,24 +46,17 @@ const Todo = () => {
         <div>
           <button className='add-button' onClick={() => addItem()}>+ Add Task</button>
         </div >
-      </div >
+      </div>
+      <div className='list'>
+        {items.map(item => {
+          return (
+            <div className='listItem'>
+              <TodoItem item={item} />
+              <button className='listItemButton' onClick={() => deleteItem(item.id)}>❌ Delete</button>
+            </div>
 
-
-      <div className='todoList-div' >
-        <ul className='todoList' >
-          {
-            items.map(item => {
-              return (
-                <div className='list' >
-                  <li className='listItem' key={item.id} >
-                    <h3>{item.value}</h3>
-                    <button className='listItemButton' onClick={() => deleteItem(item.id)
-                    }>❌ Delete</button >
-                  </li >
-                </div >
-              )
-            })}
-        </ul >
+          )
+        })}
       </div >
     </div >
 
